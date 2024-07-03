@@ -1,0 +1,42 @@
+/** UTILITIES **/
+.margin-top { margin-top: 3%; }
+
+.margin-bottom { margin-bottom: 3%; }
+
+.margin-vertical { margin: 3% 0; }
+
+.margin { margin: 3%; }
+
+.small-margin-bottom { margin-bottom: 1%; }
+
+.small-margin-vertical { margin: 1% 0; }
+
+.small-margin { margin: 1% 2%; }
+
+.normal-300 { font-weight: 300; }
+
+.bold-500 { font-weight: 600; }
+
+.extra-bold-800 { font-weight: 800; }
+
+.italic { font-style: italic; }
+
+.normal-1-rem { font-size: 1rem; }
+
+.big-1dot5-rem { font-size: 1.5rem; }
+
+.extremely-huge-x-rem { font-size: 10rem; }
+
+.text-center { text-align: center; }
+
+.border-bottom {
+    border-bottom: 2px solid;
+    width: fit-content;
+    padding: 0 1%;
+}
+
+.border-wheat { border-color: wheat; }
+
+.hidden { display: none !important; }
+
+.gray { color: gray; }

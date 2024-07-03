@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="utilities.css">
+    <title>Social Test</title>
+</head>
+<body>
+    <header>
+        <h1>Social Test</h1>
+        <button id="log-out" class="hidden" onclick="logOut()">Log Out</button>
+    </header>
+    <div id="popup" class="hidden">
+        <p id="popup-p"></p>
+    </div>
+    <div id="both-boxes" class="yo">
+        <form onsubmit="signUp(); return(false);" method="post" id="signup" class="forms">
+            <span>
+                <h2>SIGN UP:</h2>
+                <p class="gray">(*: Required)</p>
+            </span>
+            <div class="inputs">
+                <div><label class="" for="signup-username">Username*:</label class=""><input class="margin-bottom" type="text" id="signup-username" required></div>
+                <div><label class="" for="signup-password">Password*:</label class=""><input class="margin-bottom" type="password" id="signup-password" required></div>
+                <div><label class="" for="signup-name">Name:</label class=""><input class="margin-bottom" type="text" id="signup-name"></div>
+                <div><label class="" for="signup-surname">Surname:</label class=""><input class="margin-bottom" type="text" id="signup-surname"></div>
+            </div>
+            <input class="submit big-1dot5-rem bold-500" value="SUBMIT" type="submit" id="signup-submit">
+        </form>
+        <form onsubmit="login(); return(false);" method="post" id="login" class="forms">
+            <span>
+                <h2>LOGIN:</h2>
+            </span>
+            <div class="inputs">
+                <div><label class="" for="login-username">Username:</label class=""><input class="margin-bottom" type="text" id="login-username" required></div>
+                <div><label class="" for="login-password">Password:</label class=""><input class="margin-bottom" type="password" id="login-password" required></div>
+            </div>
+            <input class="submit big-1dot5-rem bold-500" value="SUBMIT" type="submit" id="login-submit">
+        </form>
+    </div>
+
+    <h2 class="text-center">Posts:</h2>
+    <article id="posts">
+
+        <div class="post">
+            <h3>Nome said:</h3>
+            <p>Ciao a tutti!</p>
+        </div>
+
+        <div class="post">
+            <h3>Nome said:</h3>
+            <p>Ciao a tutti!</p>
+        </div>
+
+        <div class="post">
+            <h3>Nome said:</h3>
+            <p>Ciao a tutti!</p>
+        </div>
+
+        <div class="post">
+            <h3>Nome said:</h3>
+            <p>Ciao a tutti!</p>
+        </div>
+    </article>
+
+    <footer>
+        <h2 class="big-1dot5-rem">Christian Antonelli C1DEV 2024</h2>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
