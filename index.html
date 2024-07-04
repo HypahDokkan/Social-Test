@@ -22,10 +22,10 @@
                 <p class="gray">(*: Required)</p>
             </span>
             <div class="inputs">
-                <div><label class="" for="signup-username">Username*:</label class=""><input class="margin-bottom" type="text" id="signup-username" required></div>
-                <div><label class="" for="signup-password">Password*:</label class=""><input class="margin-bottom" type="password" id="signup-password" required></div>
-                <div><label class="" for="signup-name">Name:</label class=""><input class="margin-bottom" type="text" id="signup-name"></div>
-                <div><label class="" for="signup-surname">Surname:</label class=""><input class="margin-bottom" type="text" id="signup-surname"></div>
+                <div><label class="" for="signup-username">Username*:</label><input class="margin-bottom" type="text" id="signup-username" required></div>
+                <div><label class="" for="signup-password">Password*:</label><input class="margin-bottom" type="password" id="signup-password" required></div>
+                <div><label class="" for="signup-name">Name:</label><input class="margin-bottom" type="text" id="signup-name"></div>
+                <div><label class="" for="signup-surname">Surname:</label><input class="margin-bottom" type="text" id="signup-surname"></div>
             </div>
             <input class="submit big-1dot5-rem bold-500" value="SUBMIT" type="submit" id="signup-submit">
         </form>
@@ -34,36 +34,29 @@
                 <h2>LOGIN:</h2>
             </span>
             <div class="inputs">
-                <div><label class="" for="login-username">Username:</label class=""><input class="margin-bottom" type="text" id="login-username" required></div>
-                <div><label class="" for="login-password">Password:</label class=""><input class="margin-bottom" type="password" id="login-password" required></div>
+                <div><label class="" for="login-username">Username:</label><input class="margin-bottom" type="text" id="login-username" required></div>
+                <div><label class="" for="login-password">Password:</label><input class="margin-bottom" type="password" id="login-password" required></div>
             </div>
             <input class="submit big-1dot5-rem bold-500" value="SUBMIT" type="submit" id="login-submit">
         </form>
+
+        <form onsubmit="createPost(); return(false);" method="post" id="create-post" class="forms hidden">
+            <span>
+                <h2>CREATE POST:</h2>
+            </span>
+            
+                <label class="" for="post-text">Text (maximum of 400 letters):</label>
+                <textarea name="post-text" id="post-text" maxlength="400"></textarea>
+            
+            <input class="submit big-1dot5-rem bold-500" value="SUBMIT" type="submit" id="post-submit">
+        </form>
     </div>
 
-    <h2 class="text-center">Posts:</h2>
-    <article id="posts">
-
-        <div class="post">
-            <h3>Nome said:</h3>
-            <p>Ciao a tutti!</p>
-        </div>
-
-        <div class="post">
-            <h3>Nome said:</h3>
-            <p>Ciao a tutti!</p>
-        </div>
-
-        <div class="post">
-            <h3>Nome said:</h3>
-            <p>Ciao a tutti!</p>
-        </div>
-
-        <div class="post">
-            <h3>Nome said:</h3>
-            <p>Ciao a tutti!</p>
-        </div>
-    </article>
+    <div class="post-titles">
+        <h2 class="text-center">Posts:</h2>
+        <input type="image" src="refresh.svg" onclick="showPosts()">
+    </div>
+    <article id="posts"></article>
 
     <footer>
         <h2 class="big-1dot5-rem">Christian Antonelli C1DEV 2024</h2>

@@ -57,7 +57,7 @@ def login(login: Login):
     login.password = toHash(login.password)
     connect = mysql.connector.connect(**config)
     cursor = connect.cursor(dictionary=True)
-    cursor.execute(f"SELECT * FROM users WHERE username = '{login.username}' AND password = '{login.password}';")
+    cursor.execute(f"SELECT username, name, surname FROM users WHERE username = '{login.username}' AND password = '{login.password}';")
     test = cursor.fetchone()
     connect.close()
     return test
@@ -68,15 +68,33 @@ def getUser(username: str):
     connect = mysql.connector.connect(**config)
     cursor = connect.cursor(dictionary=True)
     cursor.execute(f"SELECT * FROM users WHERE username = '{username}';")
-    test = cursor.fetchone()
+    user = cursor.fetchone()
     connect.close()
-    return test
+    return user
 
 @app.get("/getPassword")
-def getUser(username: str):
+def getPassword(username: str):
     connect = mysql.connector.connect(**config)
     cursor = connect.cursor(dictionary=True)
     cursor.execute(f"SELECT * FROM users WHERE password = '{toHash(username)}';")
-    test = cursor.fetchone()
+    password = cursor.fetchone()
     connect.close()
-    return test
+    return password
+
+@app.post("/createPost")
+def createPost(post: Post):
+    connect = mysql.connector.connect(**config)
+    cursor = connect.cursor(dictionary=True)
+    cursor.execute(f"INSERT INTO posts(postAuthor, postText) VALUES ('{post.username}', '{post.text}');")
+    connect.commit()
+    connect.close()
+    return True
+
+@app.get("/getAllPosts")
+def getAllPosts():
+    connect = mysql.connector.connect(**config)
+    cursor = connect.cursor(dictionary=True)
+    cursor.execute(f"SELECT * FROM POSTS;")
+    posts = cursor.fetchall()
+    connect.close()
+    return posts
