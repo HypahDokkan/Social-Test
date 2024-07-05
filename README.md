@@ -12,4 +12,4 @@ Created with:
 - Back End: Python + FastAPI
 - Database: MySQL
 
-Created by Christian Antonelli for NGW C1DEV.
+Created by Christian Antonelli.
