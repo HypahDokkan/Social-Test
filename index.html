@@ -40,6 +40,20 @@
             <input class="submit big-1dot5-rem bold-500" value="SUBMIT" type="submit" id="login-submit">
         </form>
 
+        <form onsubmit="enableEditing(); return(false);" method="post" id="user-data" class="forms hidden">
+            <span>
+                <h2>USER DATA:</h2>
+            </span>
+            <div class="inputs">
+                <div><label class="" id="label-username" for="user-username">Username:</label><input class="margin-bottom bg-gray" type="text" id="user-username" disabled></div>
+                <div><label class="" for="user-password">Password:</label><input class="margin-bottom bg-gray" type="password" id="user-password" required disabled></div>
+                <div><label class="" for="user-name">Name:</label><input class="margin-bottom bg-gray" type="text" id="user-name" disabled></div>
+                <div><label class="" for="user-surname">Surname:</label><input class="margin-bottom bg-gray" type="text" id="user-surname" disabled></div>
+            </div>
+            <input class="submit big-1dot5-rem bold-500" value="CHANGE DATA" type="submit" id="user-submit">
+        </form>
+
+
         <form onsubmit="createPost(); return(false);" method="post" id="create-post" class="forms hidden">
             <span>
                 <h2>CREATE POST:</h2>
@@ -52,11 +66,11 @@
         </form>
     </div>
 
-    <div class="post-titles">
+    <div id="post-titles" class="hidden">
         <h2 class="text-center">Posts:</h2>
-        <input type="image" src="refresh.svg" onclick="showPosts()">
+        <span><input type="image" src="refresh.svg" id="refresh" onclick="showPosts(); popUp('Posts refreshed.');"><label for="refresh">Refresh</label></span>
     </div>
-    <article id="posts"></article>
+    <article id="posts" class="hidden"></article>
 
     <footer>
         <h2 class="big-1dot5-rem">Christian Antonelli C1DEV 2024</h2>

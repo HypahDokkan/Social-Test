@@ -40,3 +40,5 @@
 .hidden { display: none !important; }
 
 .gray { color: gray; }
+
+.bg-gray { background-color: lightgray; }
